@@ -104,3 +104,10 @@ ylabel('Residuals');
 fprintf('Step6 - Residuals Normal Quantile Plot. Press enter to continue.\n');
 pause;
 close;
+
+fprintf('Simple Sample Condition %f %f \n', theta(1), theta(2));
+
+
+%% Section 2 Title
+% Description of second code block
+
