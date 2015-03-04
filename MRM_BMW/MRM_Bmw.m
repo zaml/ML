@@ -63,6 +63,8 @@ pricePrediction = b0 + b1 * mileage + b2 * age;
 
 % R-squared: ratio of sum of squares of the fitted values around y (0.5104)
 r2 = sum((pricePrediction - mean(price)).^2) / sum((price - mean(price)).^2);
+% adjusted r-suared
+r2Adj = 1- (1 - r2) * ((n-1)/(n-k-1));
 
 % Standard Squared Error
 k = 2 % two explanatory variables (mileage and age)
