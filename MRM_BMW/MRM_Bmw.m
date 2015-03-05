@@ -1,12 +1,15 @@
 %% Estimation of Residual Value of BMWs Serie 3
 %  estimation performed with multiple linear regression
 
+clc; clear; close all;
+
 %% Load Data for BMWs
 %  Price,Age,Mileage,Year,ResidualPrice,PredFormulaPrice
 
 % load data for used cars (218 samples)
 data = load('used_bmw.txt'); 
 n = size(data,1);
+k = 2; % there are 2 explanatory variables used.
 
 % model parameters
 price = data(:,1); % y
@@ -84,7 +87,6 @@ SeIntercept = 721.8478;
 interceptRatio = b0 / SeIntercept;
 b1MileageRatio = b1 / SeMileage;
 b2AgeRatio = b2 / SeAge;
-
 
 % TODO: Confidence Interval for partial effects of age and mileage
 
