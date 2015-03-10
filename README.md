@@ -1,4 +1,4 @@
 # ML
-Machine Learning
+Machine Learning & Statistic Samples Quick Guide
 
-Read me
+
