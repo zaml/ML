@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------
 # Bird Multiclass Classification with Linear Discriminant Analysis
-# @juzammo | nerdyne.com | 2016
+# @juazammo | nerdyne.com | 2016
 # ------------------------------------------------------------------
 
 # ------------------------------------------------------------------
@@ -83,39 +83,38 @@ plot(lda.fit)
 # This was a Pied Puffbird seen Alajuela, Relatively Small, With Black and White Colors, Seen in a Branch...
 bird1 <- with(data, data.frame(Size = 2, Location = 3, Color1 = 1, Color2 = 3, Color3 = 3, Behavior = 4 ))
 lda.pred <- predict(lda.fit, bird1)
-lda.class <- lda.pred$class 
+lda.class <- lda.pred$class
 summary(lda.class)
-# [1] 2 3 4 5 
-# [1] 0 0 0 0 
-# The Bird was classified as Class 1: White-necked Puffbird. Classification was wrong (but close). 
+# [1] 2 3 4 5
+# [1] 0 0 0 0
+# The Bird was classified as Class 1: White-necked Puffbird. Classification was wrong (but close).
 
 # same parameters as with bird 1, but smaller size...
 # This was a Pied Puffbird seen Alajuela, Smaller, With Black and White Colors, Seen in a Branch...
 bird2 <- with(data, data.frame(Size = 1, Location = 3, Color1 = 1, Color2 = 3, Color3 = 3, Behavior = 4 ))
 lda.pred <- predict(lda.fit, bird2)
-lda.class <- lda.pred$class 
+lda.class <- lda.pred$class
 summary(lda.class)
-# 1 2 [3] 4 5 
-# 0 0 [1] 0 0 
-# The Bird was classified as Class 3: Pied Puffbird. Classification was Correct! 
+# 1 2 [3] 4 5
+# 0 0 [1] 0 0
+# The Bird was classified as Class 3: Pied Puffbird. Classification was Correct!
 
 # Bird 3 belongs to White-fronted Nunbird
 bird3 <- with(data, data.frame(Size = 3, Location = 3, Color1 = 2, Color2 = 1, Color3 = 5, Behavior = 4 ))
 lda.pred <- predict(lda.fit, bird3)
 lda.class <- lda.pred$class
 summary(lda.class)
-# 1 [2] 3 4 5 
-# 0 [1] 0 0 0 
-# The Bird was classified as Class 2: White-fronted Nunbird. Classification was Correct! 
+# 1 [2] 3 4 5
+# 0 [1] 0 0 0
+# The Bird was classified as Class 2: White-fronted Nunbird. Classification was Correct!
 
 # Bird 4 belongs to Lanceolated Monklet
 bird4 <- with(data, data.frame(Size = 2, Location = 3, Color1 = 4, Color2 = 1, Color3 = 3, Behavior = 4 ))
 lda.pred <- predict(lda.fit, bird4)
-lda.class <- lda.pred$class 
+lda.class <- lda.pred$class
 summary(lda.class)
-# 1 2 3 [4] 5 
-# 0 0 0 [1] 0 
-# The Bird was classified as Class 4: Lanceolated Monklet. Classification was Correct! 
+# 1 2 3 [4] 5
+# 0 0 0 [1] 0
+# The Bird was classified as Class 4: Lanceolated Monklet. Classification was Correct!
 
 # Remember, the bird is the w3rd.
-
