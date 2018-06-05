@@ -99,7 +99,7 @@ k = 3
 dataSorted <- data[order(data$distance),] 
 
 # get top k observations
-dataSorted <- dataSorted[1:3,]
+dataSorted <- dataSorted[1:k,]
 
 # function to obtain the mode of a vector
 getmode <- function(v) {
