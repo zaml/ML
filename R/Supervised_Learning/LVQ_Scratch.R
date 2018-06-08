@@ -105,6 +105,40 @@ for (epoch in 1:maxEpochs) {
 # display the trained codebook vector
 codebook
 
+# Prediction Over Training Set ---------------
+
+prediction <- numeric(nrow(data))
+
+for (i in 1:nrow(data)) {
+  
+  p1 <- data[i,"x1"]
+  p2 <- data[i,"x2"]
+  y <-  data[i,"y"]
+  
+  # create new variable for euclidiean diffs for x1
+  codebook$x1e <- (codebook$x1 - p1)^2
+  
+  # create new variable for euclidiean diffs for x1
+  codebook$x2e <- (codebook$x2 - p2)^2
+  
+  # sum both x1e and x2e in xsum
+  codebook$xsum <- (codebook$x1e + codebook$x2e)
+  
+  # calculate distance as sqrt(data$xsum)
+  codebook$distance <- sqrt(codebook$xsum)
+  
+  # Select the Best Matching Unit (BMU)
+  bmu <- codebook[codebook$distance == min(codebook$distance),]
+  
+  prediction[i] <- bmu$y
+  
+}
+
+# Prediction Performance ---------------------
+
+p <- prediction - Y 
+acc <- (length(Y) - sum(p!=0)) / length(Y)
+cat("The LVQ Prediction Accuracy is: ", acc * 100, "%")
   
 
 
