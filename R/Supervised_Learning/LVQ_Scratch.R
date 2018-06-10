@@ -3,42 +3,9 @@
 # juan.zamora@nerdyne.com
 # --------------------------------------------
 
-# Data Definition ----------------------------
+# Data Loading -------------------------------
 
-X1 <- c(3.393533211,
-        3.110073483,
-        1.343808831,
-        3.582294042,
-        2.280362439,
-        7.423436942,
-        5.745051997,
-        9.172168622,
-        7.792783481,
-        7.939820817)
-
-X2 <- c(2.331273381,
-        1.781539638,
-        3.368360954,
-        4.67917911,
-        2.866990263,
-        4.696522875,
-        3.533989803,
-        2.511101045,
-        3.424088941,
-        0.791637231)
-
-Y <- c(0, 
-       0,
-       0, 
-       0, 
-       0, 
-       1, 
-       1, 
-       1, 
-       1, 
-       1)
-
-data <- data.frame(x1 = X1, x2 = X2, y = Y)
+data <- read.csv(file="data/data_scratch_1.csv",head=TRUE,sep=",")
 
 # Select Codebook Vectors --------------------
 
@@ -136,8 +103,8 @@ for (i in 1:nrow(data)) {
 
 # Prediction Performance ---------------------
 
-p <- prediction - Y 
-acc <- (length(Y) - sum(p!=0)) / length(Y)
+p <- prediction - data$y 
+acc <- (length(data$y) - sum(p!=0)) / length(data$y)
 cat("The LVQ Prediction Accuracy is: ", acc * 100, "%")
   
 
