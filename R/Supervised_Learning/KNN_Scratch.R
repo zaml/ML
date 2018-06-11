@@ -3,8 +3,6 @@
 # juan.zamora@nerdyne.com
 # --------------------------------------------
 
-# Data Definition ----------------------------
-
 # Data Loading -------------------------------
 
 data <- read.csv(file="data/data_scratch_1.csv",head=TRUE,sep=",")
