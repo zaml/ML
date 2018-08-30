@@ -225,3 +225,4 @@ pip-log.txt
 *.Rhistory
 Python/CreateOwnNN/mnist_dataset/mnist_test.csv
 Python/CreateOwnNN/mnist_dataset/mnist_train.csv
+R/Supervised_Learning/.RData
